@@ -1,0 +1,32 @@
+/* src/app/globals.css */
+@import "tailwindcss"; /* یا اگر قبلاً به نتیجه رسیدید که @import "tailwindcss/preflight"; @import "tailwindcss/utilities"; بهتر کار می‌کنه، از اون استفاده کنید */
+
+/* این متغیرهای رنگی پیش‌فرض Next.js هستن. می‌تونید نگهشون دارید یا بعداً با سیستم رنگی خودتون جایگزین کنید.
+  برای اعمال فونت، این بخش تداخلی ایجاد نمی‌کنه.
+*/
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+  /* بسیار مهم: مطمئن شوید که هیچ font-family مستقیمی اینجا برای body تعریف نشده باشد 
+    تا فونت از طریق Tailwind (که از متغیر --font-vazirmatn استفاده می‌کند) اعمال شود.
+  */
+}
