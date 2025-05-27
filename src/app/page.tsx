@@ -3,56 +3,19 @@
 
 import Link from "next/link";
 import React from "react";
-import Image from "next/image"; // ایمپورت Image برای گالری (و اگر در ProductCard یا HeroSlideshow هم استفاده مستقیم شده)
+// import Image from "next/image"; // ایمپورت Image برای گالری (و اگر در ProductCard یا HeroSlideshow هم استفاده مستقیم شده)
 
 import HeroSlideshow from "@/components/HeroSlideshow"; // آیکون‌ها برای بخش مزایا
 // import ProductCard from '@/components/ProductCard';
 import AdvantagesSection from "@/components/AdvantagesSection";
 import FeaturedProductsSection from "@/components/FeaturedProductsSection";
 import GallerySection from "@/components/GallerySection";
-// import { Search } from 'lucide-react'; // آیکون برای گالری (اختیاری، در کامنت‌ها استفاده شده)
+import AboutUsSnippet from "@/components/AboutUsSnippet";
 
-// داده‌های موقت برای محصولات ویژه
-// const featuredProducts = [
-//   {
-//     id: '1',
-//     name: 'صفحه کابینت طرح سنگ کالاکاتا گلد',
-//     imageUrl: '/images/products/calacatta-gold.jpg',
-//     slug: 'calacatta-gold-marble',
-//     description: 'زیبایی خیره‌کننده سنگ مرمر با دوام و کارایی HPL.'
-//   },
-//   {
-//     id: '2',
-//     name: 'صفحه کابینت طرح چوب بلوط روشن',
-//     imageUrl: '/images/products/light-oak-wood.jpg',
-//     slug: 'light-oak-wood-finish',
-//     description: 'گرما و طبیعت چوب، با مقاومت بالا در برابر رطوبت و خش.'
-//   },
-//   {
-//     id: '3',
-//     name: 'صفحه کابینت طوسی بتن اکسپوز مات',
-//     imageUrl: '/images/products/concrete-grey-matte.jpg',
-//     slug: 'concrete-grey-matte',
-//     description: 'طراحی مدرن و صنعتی، ایده‌آل برای فضاهای مینیمال.'
-//   },
-//   {
-//     id: '4',
-//     name: 'صفحه کابینت مشکی کهکشانی براق',
-//     imageUrl: '/images/products/galaxy-black-gloss.jpg',
-//     slug: 'galaxy-black-gloss',
-//     description: 'درخشش و عمق رنگ مشکی با دانه‌های براق، لوکس و متفاوت.'
-//   },
-// ];
 
 export default function HomePage() {
-    // آرایه‌ای از مسیر تصاویر گالری شما
-    const galleryImages = Array.from({ length: 9 }, (_, i) => `/images/gallery/${i + 1}.jpg`);
-
-    // تابع فرضی برای باز کردن لایت‌باکس (بعداً پیاده‌سازی می‌شود)
-    // const openLightbox = (imageSrc: string) => {
-    //   console.log("Open lightbox for:", imageSrc);
-    //   //  اینجا منطق نمایش تصویر در لایت‌باکس پیاده‌سازی می‌شود
-    // };
+   
+   
 
     return (
         <>
@@ -95,6 +58,7 @@ export default function HomePage() {
             <GallerySection />
 
             {/* TODO: معرفی کوتاه "درباره ونداد چوب" */}
+            <AboutUsSnippet/>
             {/* TODO: نظرات مشتریان */}
             {/* TODO: فراخوان به اقدام نهایی */}
             {/* TODO: (اختیاری) آخرین مقالات یا اخبار */}
