@@ -3,7 +3,7 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { Vazirmatn } from 'next/font/google';
 import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer"; //  ایمپورت کردن Footer
+// import Footer from "@/components/Footer"; // اگر ساختید، از کامنت خارج کنید
 
 const vazirmatnFont = Vazirmatn({
   subsets: ['arabic', 'latin'],
@@ -24,14 +24,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="fa" dir="rtl">
-      {/* تغییرات در body برای چسبیدن فوتر به پایین */}
       <body className={`${vazirmatnFont.variable} antialiased flex flex-col min-h-screen`}>
         <Navbar />
-        {/* تغییرات در main برای پر کردن فضای موجود */}
-        <main className="flex-grow container mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <main className="flex-grow"> {/* container و padding رو به خود page یا section ها منتقل می‌کنیم */}
           {children}
         </main>
-        <Footer /> {/* Footer اینجا اضافه شده */}
+        {/* <Footer /> */} {/* اگر ساختید، از کامنت خارج کنید */}
       </body>
     </html>
   );

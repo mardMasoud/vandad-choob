@@ -4,53 +4,53 @@
 import React from 'react';
 import Image from 'next/image';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay, Pagination, Navigation, EffectFade } from 'swiper/modules';
+import { Autoplay, EffectFade, Navigation, Pagination } from 'swiper/modules'; // Navigation و Pagination رو هم اضافه می‌کنیم
 
 // ایمپورت کردن استایل‌های Swiper
 import 'swiper/css';
-import 'swiper/css/effect-fade'; // برای افکت محو شدن
-import 'swiper/css/pagination';  // اگر از نقاط ناوبری استفاده می‌کنید
-import 'swiper/css/navigation';  // اگر از دکمه‌های قبلی/بعدی استفاده می‌کنید
+import 'swiper/css/effect-fade';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
 
-// لیستی از تصاویر شما - این بخش رو با نام تصاویر خودتون جایگزین کنید!
+// مسیر تصاویر شما - مطمئن بشید اینها با فایل‌های واقعی شما در public/images/hero/ مطابقت دارن
 const slideImages = [
-  '/images/hero/hero-image-1.jpg', //  تصویر اول
-  '/images/hero/hero-image-2.jpg', //  تصویر دوم
-  '/images/hero/hero-image-3.jpg', //  تصویر سوم
-  '/images/hero/hero-image-4.jpg', //  تصویر چهارم
-  '/images/hero/hero-image-5.jpg', //  تصویر پنجم
+  '/images/hero/hero-slide-1.jpg',
+  '/images/hero/hero-slide-2.jpg',
+  '/images/hero/hero-slide-3.jpg',
+  '/images/hero/hero-slide-4.jpg',
+  '/images/hero/hero-slide-5.jpg',
 ];
 
 const HeroSlideshow = () => {
   return (
-    <div className="absolute inset-0 w-full h-full z-0"> {/* این div تمام فضای والد رو میگیره و در لایه پشتی قرار میگیره */}
+    // این div کل فضای والد (section در page.tsx) رو میگیره و در لایه پشتی (z-0) قرار می‌گیره
+    <div className="absolute inset-0 w-full h-full z-0">
       <Swiper
-        modules={[Autoplay, Pagination, Navigation, EffectFade]}
-        effect="fade" // افکت محو شدن بین اسلایدها
+        modules={[Autoplay, EffectFade, Navigation, Pagination]}
+        effect="fade"
         fadeEffect={{ crossFade: true }}
         autoplay={{
-          delay: 5000, // هر 5 ثانیه یک بار تصویر عوض بشه
-          disableOnInteraction: false, // حتی اگر کاربر با اسلایدها کار کرد، اتوپلی ادامه پیدا کنه
+          delay: 5000,
+          disableOnInteraction: false,
         }}
-        loop={true}       // برای تکرار اسلایدها
-        slidesPerView={1} // در هر لحظه فقط یک اسلاید نمایش داده بشه
-        pagination={{ clickable: true }} // فعال کردن نقاط ناوبری (اختیاری)
-        navigation={true}             // فعال کردن دکمه‌های قبلی/بعدی (اختیاری)
+        loop={true}
+        slidesPerView={1}
+        pagination={{ clickable: true }} // نقاط ناوبری
+        navigation={true}             // دکمه‌های قبلی/بعدی پیش‌فرض Swiper
         className="w-full h-full"
       >
         {slideImages.map((src, index) => (
           <SwiperSlide key={index} className="w-full h-full">
             <Image
               src={src}
-              alt={`اسلاید نمایش قهرمان ${index + 1}`}
-              layout="fill"
-              objectFit="cover"
-              quality={80} // کیفیت تصویر رو می‌تونید تنظیم کنید
-              priority={index === 0} // تصویر اول با اولویت بالاتر لود بشه
-              unoptimized={src.endsWith('.gif')} // اگر گیف دارید، این رو اضافه کنید
+              alt={`اسلاید ونداد چوب ${index + 1}`}
+              fill
+              style={{ objectFit: 'cover' }}
+              quality={80}
+              priority={index === 0}
             />
-            {/* یک لایه تیره روی هر تصویر برای خوانایی بهتر متن رویی (اختیاری) */}
-            <div className="absolute inset-0 bg-black opacity-30"></div>
+            {/* لایه تیره روی هر تصویر برای خوانایی بهتر متن رویی */}
+            <div className="absolute inset-0 bg-black opacity-40"></div>
           </SwiperSlide>
         ))}
       </Swiper>
