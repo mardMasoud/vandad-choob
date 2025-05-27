@@ -17,7 +17,7 @@ interface Product {
   gallery_image_urls: string[] | null;
   hpl_finish: string | null;
   thickness_mm: number | null;
-  dimensions_info: any | null; //  jsonb هست، می‌تونه هر ساختاری داشته باشه
+  dimensions_info: Record<string, unknown>; //  jsonb هست، می‌تونه هر ساختاری داشته باشه
   color_palette: string[] | null;
   categories: string[] | null;
   // ...  می‌تونید بقیه فیلدهای جدول products رو هم در صورت نیاز اینجا اضافه کنید

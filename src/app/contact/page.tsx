@@ -3,7 +3,7 @@
 
 import React, { useState } from "react";
 import { Phone, Mail, MapPin, Send } from "lucide-react"; // آیکون‌ها
-import Link from "next/link"; // اگر لینکی در این صفحه دارید
+
 
 //  برای SEO، بهتر است metadata در یک فایل layout.tsx یا route segment config تعریف شود
 //  اما چون این یک Client Component است، فعلاً از آن صرف نظر می‌کنیم و بعداً می‌توان به آن پرداخت.
