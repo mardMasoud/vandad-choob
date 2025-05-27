@@ -11,6 +11,7 @@ import AdvantagesSection from "@/components/AdvantagesSection";
 import FeaturedProductsSection from "@/components/FeaturedProductsSection";
 import GallerySection from "@/components/GallerySection";
 import AboutUsSnippet from "@/components/AboutUsSnippet";
+import TestimonialsSection from "@/components/TestimonialsSection";
 
 
 export default function HomePage() {
@@ -60,6 +61,7 @@ export default function HomePage() {
             {/* TODO: معرفی کوتاه "درباره ونداد چوب" */}
             <AboutUsSnippet/>
             {/* TODO: نظرات مشتریان */}
+            <TestimonialsSection/>
             {/* TODO: فراخوان به اقدام نهایی */}
             {/* TODO: (اختیاری) آخرین مقالات یا اخبار */}
         </>
