@@ -12,6 +12,7 @@ import FeaturedProductsSection from "@/components/FeaturedProductsSection";
 import GallerySection from "@/components/GallerySection";
 import AboutUsSnippet from "@/components/AboutUsSnippet";
 import TestimonialsSection from "@/components/TestimonialsSection";
+import FinalCTASection from "@/components/FinalCTASection";
 
 
 export default function HomePage() {
@@ -63,6 +64,7 @@ export default function HomePage() {
             {/* TODO: نظرات مشتریان */}
             <TestimonialsSection/>
             {/* TODO: فراخوان به اقدام نهایی */}
+            <FinalCTASection/>
             {/* TODO: (اختیاری) آخرین مقالات یا اخبار */}
         </>
     );
